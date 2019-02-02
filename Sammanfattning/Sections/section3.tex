@@ -1,0 +1,32 @@
+\section{Bestämma en analytisk funktion.}
+Det finns uppgifter där man ska bestämma en hel analytisk funktion $f(z) = u +iv$ givet vad $u+v$ är eller något i den stilen.
+\begin{tcolorbox}
+	Bestäm alla (hela analytiska) funktioner $f(z) =u+iv$ sådanna att 
+\begin{align*}
+	u \pm v = f(x,y) \quad \text{och} \quad f(c) = C
+\end{align*}
+	Sedan ska $f$ uttryckas i $f(z)$.
+\end{tcolorbox}
+Här gäller det att veta Cochy-kriterierna, nämligen 
+\begin{align*}
+	\begin{cases}
+		u'_x = v'_y \\
+		u'_y = -v'_x
+	\end{cases}
+\end{align*}
+
+\subsection{Derivera $f(x,y)'_x$ och $f(x,y)'_y$}
+Detta kommer att skapa två ekviationssystem. 
+\begin{align*}
+	\begin{cases}
+		f(x,y)'_x = u'_x \pm v'_x  = ... \\
+		f(x,y)'_y = u'_y \pm v'_y = ...
+	\end{cases}
+\end{align*}
+
+\subsection{Lös ut $u'_x$ och $u'_y$ eller $v'_x$ och $v'_y$}
+Man kan lösa ut detta ur ekviationssystemet, det kan hända att man får använda Cochykriteriet för att göra variabelbyten. Nu man ett uttryck för till exempel $u'_x$. Nästa steg är att börja integrera. Exexemplet $u'_x$ integreras givetvis med avseende på $x$, glöm inte att detta skapar en funktion $\phi(y)$. Sedan deriverar man det $u$ som man fått fram med avseende på $y$ och jämnför detta med det som man hade tidigare. På detta sätt kan man lösa ut $\phi'(y)$ och sedan blir $\phi = \Phi(y) + A$ \\ \\
+
+Man kan nu även få fram $v$, med hjälp utav Cochy-kriterierna, och man har nu både u och v. Vi har därför nu fått fram $f(x,y)$ och med insättning av $a$ så kan vi lösa ut konstanten A. \\ \\
+
+Nu används Entydlighetssatsen. Man börjar med att säga att funktionen sammanfaller på den reela axeln, det vill säga skapa en ny funktion $g(z)$ där $z$ ersätter $x$ och $0$ ersätter $y$. Därefter säger entydlighetssatsen att $g(z) = f(z)$ och vi är färdiga.    

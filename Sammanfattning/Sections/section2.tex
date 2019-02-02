@@ -1,0 +1,72 @@
+\section{Integraler}
+Det finns uppgifter som har att göra med att beräkna integraler. Jag har börajat misstänka att dessas löösningsgång är så olika att det kanske är dumt att ha dem under samma rubrik.
+
+\subsection{Residykalkyl}
+
+\begin{tcolorbox}
+Beräkna integralen (med residykalkyl)
+
+\begin{align*}
+	\int_{\infty}^{\infty} f(x) dx \quad \text{eller} \quad \int_{0}^{\infty} f(x) dx \quad \text{eller} \quad  \int_{-\pi}^{\pi} f(\theta) d \theta
+\end{align*}
+
+\end{tcolorbox}
+Dessa integraler beräknas valigtvis med residykalkyl, om uppgiften tvingar en eller inte. Vad man gör först är att rita upp området. Man kan dock vara lite lurig, göra det lätt för sig. \\ 
+
+\textbf{Integral 1} I den första integralen så vill man lägga till ett bågelement i det komplexa talplanet, så man får ett omslutet område. Man kan göra detta på två sätt, man kan lägga båden under eller över realaxeln. När man väler detta så är det viktigt att bågelementets bidrag är ändligt, det får man undersöka med ML-uppskattning och liknande. Om båda går så kan det vara smart att välja att lägga till den som är enklast att räkna ut. Om den ena sidan bara har en pol och den andra har 3 så borde valet vara uppenbart. Om funktionen är jämn så finns ett annat trick, man kan bara räkna ut en kvarts cirkelskiva och gångra med 2. Därefter kan man beräkna residyn och dra bort potentiella tillskott. \\ 
+
+\textbf{Integral 2} Se tidigare fall. Något att tänka på här är att man kan göra tvärt om, om funktionen är jämn så kan man ta en halv cirkelskiva och halvera resultatet. I annat fall akn man tvingas lägga till en sträcka $I_R$, dennas bidrag behöver tas hänsyn till. Därefter kan man beräkna residyn, och dra bort botensiella tillskott.\\ 
+
+\textbf{Integral 3} Här känns polära koordinater rimligt. Man ersätter $\theta$ med $e^{i \theta} = z$ och $d \theta = dz/iz$, därefter kan man beräkna residyn i området.
+\\
+
+\subsubsection*{Beräkna residy}
+Det säkraste sättet är att göra en serieutveckling, förutsatt att man är ett matematiskt geni så ska detta alltid gå att göra. Man kan använda serieutvecklingar, stora ordo men mer, för att få fram $c_{-1}$-konstanten ur serien, detta är per definition residyn. \\
+
+I vissa fall akn man göra det enkelt för sig själv genom att använda regler som finns att tillgå. Båda dessa bygger på att man vet polerna för $f(z)$, man har då regler
+\begin{align*}
+	f(z) = \frac{g(z)}{(z-z_0)^N} \iff \underset{z=z_0}{\text{Res}} f(z) = \frac{1}{(N-1)!}\lim_{z = z_0} \frac{d^{N-1}}{dz^{N-1}} \left( (z-z_0)^N f(z)\right)
+\end{align*}
+Den andra är
+\begin{align*}
+f(z) = \frac{g(z)}{q(z)} \iff \underset{z=z_0}{\text{Res}}f(z) = \frac{p(z_0)}{q'(z_0)}	
+\end{align*}
+
+\subsection{Räkna ut integralen}
+Integralen är nu $2 \pi i \cdot (\text{alla residyer i området})$
+
+\subsubsection*{Sammanfattning}
+
+\begin{itemize}
+	\item Bestäm rimligt område. Man kan till exempel uttnyttja att funktionen är jämn. Tänk på alla bidrag som läggs till, alla dessa måste konvergera. 
+	\item Beräkna residyerna i det valda området. Har man enkelpoler så kan man använda den andra formeln. Är poelen av högre ordning så kan man använda formel 1. Är det inte en pol eller hävbar pol, utan en essentiell, så är serieutveckling enda sättet.
+	\item Addera, subtraher och sånt, så man får ut det sökta bidraget. 
+\end{itemize}
+
+\subsection{Residykalkyl på Fourierintegraler}
+
+
+\begin{tcolorbox}
+Beräkna integralen (med residykalkyl)
+
+\begin{align*}
+	\int_{\infty}^{\infty} h(x) \cdot e^{iax} dx \quad \text{eller} \quad \int_{0}^{\infty} h(x) \cos{ax} dx \quad \text{eller} \quad  \int_{-\pi}^{\pi} h(x) \sin{ax} dx
+\end{align*}
+\end{tcolorbox}
+
+Lösningsgången på dessa verkar vara väldigt liknande. Skillnaden i stort sett är att man kan nyttja Jordans lämma som säger att
+\begin{align*}
+	\int_{C_R^+} |e^{iax}| |dx| \leq \frac{\pi}{R}
+\end{align*}
+När man löser denna typ utav integral så brukar man vilja ha den periodiska funktionen uttryckt i $e^{i x}$. Man kan göra detta enkelt genom att helt enkelt ersätta den periodiska funktionen med detta och ta antingen real eller imaginärdelen av alltihop. 
+
+\subsection{Nyckelhålsstrukturer}
+Nyckel.hålsstrukturer är i strort sett en extrapolisering på tidigare nämnt. Skillnaden är att man nu även lägger till en båga, tex kring origo. Man kan på detta sätt undervika en essentiel singularitet och liknande. Skillnaden är att man nu har en till båge, $C_\epsilon$ , vars bidrag är då man låter $\epsilon \rightarrow \infty$.
+
+
+
+
+
+
+
+
